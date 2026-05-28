@@ -67,7 +67,6 @@ new:
 	cp -r . ../$(name)
 	rm -rf ../$(name)/.git ../$(name)/node_modules ../$(name)/dist
 	@cd ../$(name) && sed -i 's/"name": "beaver-ui"/"name": "$(name)"/' package.json
-	@cd ../$(name) && git init -q && git add .
 	@echo ""
 	@echo "Scaffolded → ../$(name)"
 	@echo ""
