@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useNotification, Button, Card, CardBody, FormField, Input } from '@aviary-ui/ui';
+import { useNotification, Button, Card, CardBody, FormField, Input, BackendVersion } from '@aviary-ui/ui';
 import { storage } from '@aviary-ui/core';
 import { config } from '@/infra/config';
 import { login } from '@/api/auth';
@@ -79,7 +79,7 @@ export default function LoginPage() {
         </Card>
 
         <div className="text-center text-secondary mt-3 small">
-          &copy; {new Date().getFullYear()} {config.appName}
+          &copy; {new Date().getFullYear()} {config.appName} · <BackendVersion />
         </div>
       </div>
     </div>
