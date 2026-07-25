@@ -1,6 +1,88 @@
 /* Minimal overrides on top of Tabler */
 
+.navbar-brand-icon {
+  display: none;
+}
+
 /* Ensure sidebar takes full height */
-.navbar-vertical.navbar-expand-lg {
-  min-height: 100vh;
+@media (min-width: 992px) {
+  .navbar-vertical.navbar-expand-lg {
+    min-height: 100vh;
+  }
+}
+
+/* Desktop sidebar show/hide toggle (AppLayout) — collapses to icon-only rail */
+@media (min-width: 992px) {
+  .navbar-vertical.navbar-expand-lg {
+    transition: width 0.3s;
+  }
+  .navbar-vertical.navbar-expand-lg ~ .page-wrapper {
+    margin-left: 15rem;
+    transition: margin-left 0.3s;
+  }
+  .navbar-vertical.navbar-expand-lg.navbar-collapsed-desktop {
+    width: 4.5rem;
+  }
+  .navbar-vertical.navbar-expand-lg.navbar-collapsed-desktop ~ .page-wrapper {
+    margin-left: 4.5rem;
+  }
+  .navbar-collapsed-desktop .container-fluid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .navbar-collapsed-desktop .navbar-brand-icon {
+    display: inline-block;
+  }
+  .navbar-collapsed-desktop .navbar-brand-text {
+    display: none;
+  }
+  .navbar-collapsed-desktop .nav-link {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .navbar-collapsed-desktop .nav-link-title,
+  .navbar-collapsed-desktop .sidebar-user-text {
+    display: none;
+  }
+  .sidebar-user-icon {
+    display: none;
+  }
+  .navbar-collapsed-desktop .sidebar-user-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .navbar-collapsed-desktop .sidebar-user-chevron {
+    display: none;
+  }
+  .navbar-collapsed-desktop .mt-auto.border-top > .d-flex {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .navbar-collapsed-desktop .mt-auto.border-top .dropup {
+    flex: 0 0 auto;
+    overflow: visible;
+    width: auto;
+  }
+  .navbar-collapsed-desktop .mt-auto.border-top .dropup > button {
+    width: auto !important;
+    justify-content: center !important;
+  }
+  .navbar-collapsed-desktop .mt-auto.border-top .ms-2 {
+    margin-left: 0 !important;
+  }
+  .sidebar-collapse-toggle {
+    position: fixed;
+    top: 0.75rem;
+    left: 15.5rem;
+    z-index: 1031;
+    transition: left 0.3s;
+  }
+  .navbar-collapsed-desktop ~ .sidebar-collapse-toggle {
+    left: 5rem;
+  }
 }
