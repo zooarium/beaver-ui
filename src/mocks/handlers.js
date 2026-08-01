@@ -9,7 +9,7 @@ export const handlers = [
       data: {
         token: 'mock-access-token',
         refresh_token: 'mock-refresh-token',
-        user: { id: 1, email: 'user@example.com', role: 'user', permissions: [] },
+        user: { id: 1, email: 'user@example.com', role: 'admin', permissions: [] },
       },
     })
   ),
